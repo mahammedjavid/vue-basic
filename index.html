@@ -1,0 +1,17 @@
+<div id="app">
+    <div id="container">
+        <h1>Todo List</h1>
+        <input type="text" id="todoInput" placeholder="Add a new todo" v-model="inputValue">
+        <button v-on:click="addGoal">Add</button>
+        <ul id="todoList">
+            <div v-if="listOfData.length">
+                <li v-for="data in listOfData">{{data}}</li>
+            </div>
+            <div v-else>
+                No data found
+            </div>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="script.js"></script>
+</div>
