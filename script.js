@@ -3,14 +3,18 @@ const { createApp, ref } = Vue
 createApp({
     data() {
         return {
+            todoForm : {
+                title : '',
+                desc : ''
+            },
             listOfData: [],
-            inputValue: ''
         }
     },
     methods: {
-        addGoal() {
-            this.listOfData.push(this.inputValue)
-            this.inputValue = ''
+        addTodo() {
+            this.listOfData.push(JSON.parse(JSON.stringify(this.todoForm)))
+            this.todoForm.title = ''
+            this.todoForm.desc = ''
         }
     }
 }).mount('#app')
